@@ -1,0 +1,32 @@
+
+
+default: &default  
+  adapter: postgresql
+  encoding: Unicode
+  pool: 5
+
+development:  
+  adapter: postgresql
+  encoding: Unicode
+  database: platziblog_dev
+  username: postgres
+  host: localhost #opcional  port:5432  pool:5#opcional
+
+test:  
+  adapter: postgresql
+  encoding: Unicode
+  database: platziblog_test
+  username: postgres
+  host: localhost
+  port: 5432  
+  pool: 5
+
+production:  
+  adapter: postgresql
+  encoding: Unicode
+  database: platziblog_prod
+  username: postgres
+  password: <%= ENV['PLATZIBLOG_DATABASE_PASSWORD'] %>  
+  host: localhost
+  port: 5432  
+  pool: 5
